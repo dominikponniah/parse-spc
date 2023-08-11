@@ -1,4 +1,5 @@
-// Defining SPC-Rows according to the official documentation by SIX Group
+// swissQRReader.js
+
 export const QRCodeSections = {
     0: 'QRType',
     1: 'Version',
@@ -36,7 +37,6 @@ export const QRCodeSections = {
     33: 'AV2_Parameter'
 };
 
-// Method for decoding the QR-Code to use it virtually
 export async function decodeQRCode(imageSrc) {
     return new Promise((resolve) => {
         const img = new Image();
@@ -60,7 +60,6 @@ export async function decodeQRCode(imageSrc) {
     });
 }
 
-// Parsing method for converting SPC to JSON
 export function parseQRCodeData(textContent) {
     console.log(textContent);
     const lines = textContent.split('\n');
@@ -76,6 +75,9 @@ export function parseQRCodeData(textContent) {
         }
     }
 
+    // EZE - Endgültigerzahlungsempfänger (LEER LASSEN)!
+    // ZE - Zahlungsempfänger
+    // EZP - Endgültiger Zahlungspflichtiger
     const jsonData = {
         currency: data['Währung'],
         amount: parseFloat(data['Betrag']),
@@ -99,10 +101,8 @@ export function parseQRCodeData(textContent) {
             country: data['EZP_Land'],
         },
     };
-    return jsonData;
-}
+    return jsonData;}
 
-// Processing method called by the frontend
 export function processSwissQRCodeFromImageFile(file, callback) {
     const reader = new FileReader();
     reader.onload = function (e) {

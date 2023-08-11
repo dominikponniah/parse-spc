@@ -1,0 +1,31 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SwissQR-Code Reader</title>
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+    <script type="module" src="reader.js"></script>
+</head>
+<body>
+    <h1>SwissQR-Code Reader</h1>
+    <input type="file" accept="image/*" id="file-input">
+    <pre id="qr-result"></pre>
+    <pre id="parsed-data"></pre>
+    <script type="module">
+        import { processSwissQRCodeFromImageFile, parseQRCodeData } from './reader.js';
+
+        const fileInput = document.getElementById('file-input');
+        const parsedData = document.getElementById('parsed-data');
+
+        fileInput.addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                processSwissQRCodeFromImageFile(file, dataMatrix => {
+                    const jsonData = parseQRCodeData(dataMatrix);
+                    parsedData.textContent = 'Parsed Data:\n' + JSON.stringify(jsonData, null, 2);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

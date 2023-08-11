@@ -1,8 +1,7 @@
 {
   "name": "parse-spc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Library for parsing Swiss Payment Codes (QR Bills) virtually by uploading a image",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,9 +10,12 @@
     "url": "git+https://github.com/dominikponniah/parse-spc.git"
   },
   "author": "Dominik Ponniah",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/dominikponniah/parse-spc/issues"
   },
-  "homepage": "https://github.com/dominikponniah/parse-spc#readme"
+  "homepage": "https://github.com/dominikponniah/parse-spc#readme",
+  "dependencies": {
+    "jsqr": "^1.4.0"
+  }
 }
