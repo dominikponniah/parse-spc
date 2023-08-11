@@ -1,6 +1,6 @@
 {
   "name": "parse-spc",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Library for parsing Swiss Payment Codes (QR Bills) virtually by uploading a image",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
