@@ -1,6 +1,6 @@
 {
   "name": "parse-spc",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Library for parsing Swiss Payment Codes (QR Bills) virtually by uploading a image",
   "main": "swissQRReader.js",
   "scripts": {

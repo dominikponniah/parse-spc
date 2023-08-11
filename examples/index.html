@@ -4,7 +4,6 @@
 <head>
     <title>SwissQR-Code Reader</title>
     <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
-    <script type="module" src="reader.js"></script>
 </head>
 <body>
     <h1>SwissQR-Code Reader</h1>
@@ -12,7 +11,7 @@
     <pre id="qr-result"></pre>
     <pre id="parsed-data"></pre>
     <script type="module">
-        import { processSwissQRCodeFromImageFile, parseQRCodeData } from './reader.js';
+        import { processSwissQRCodeFromImageFile, parseQRCodeData } from './node_modules/parse-spc/swissQRReader.js';
 
         const fileInput = document.getElementById('file-input');
         const parsedData = document.getElementById('parsed-data');
